@@ -1,7 +1,12 @@
-Task_tracker Method Design Recipe
+# Task_tracker Method Design Recipe
 
 1. Describe the Problem
+
+```
+
    As a user, so that I can keep track of my tasks, I want to check if a text includes the string #TODO.
+
+```
 
 2. Design the Method Signature
 
@@ -31,4 +36,9 @@ task_tracker(1) or (1.0) => #returns error
 ```
 
 4. Implement the Behaviour
+
+```
+
    Follow the test-driving process of red, green, refactor to implement the behaviour.
+
+```

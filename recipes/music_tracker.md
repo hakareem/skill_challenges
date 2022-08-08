@@ -1,7 +1,10 @@
-MusicTracker Class Design Recipe
+# MusicTracker Class Design Recipe
 
 1. Describe the Problem
+
+```
    As a user so that I can keep track of my music listening, I want to add tracks I've listened to and see a list of them.
+```
 
 2. Design the Method Signature
 
@@ -44,8 +47,10 @@ track.list # => ["Going up"]
 ```
 
 4. Implement the Behaviour
-   Follow the test-driving process of red, green, refactor to implement the behaviour.
 
 ```
+
+   Follow the test-driving process of red, green, refactor to implement the behaviour.
+
 
 ```

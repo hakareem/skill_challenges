@@ -1,7 +1,12 @@
-Uppercase Method Design Recipe
+# Uppercase Method Design Recipe
 
 1. Describe the Problem
+
+```
+
    As a user I want to retrive all the cased words from a given text.
+
+```
 
 2. Design the Method Signature
 
@@ -33,4 +38,9 @@ extract_uppercase(nil) throws an error
 ```
 
 4. Implement the Behaviour
+
+```
+
    Follow the test-driving process of red, green, refactor to implement the behaviour.
+
+```

@@ -1,6 +1,9 @@
-Diary Program Muli Class Design Recipe
+# Diary Program Muli Class Design Recipe
 
 1. Describe the Problem
+
+```
+
    As a user so that I can record my experiences
    I want to keep a regular diary
 
@@ -19,6 +22,8 @@ Diary Program Muli Class Design Recipe
    As a user
    So that I can keep track of my contacts
    I want to see a list of all of the mobile phone numbers in all my diary entries
+
+```
 
 2. Design the Program Structure
 
@@ -167,8 +172,10 @@ end
 ```
 
 4. Implement the Behaviour
-   Follow the test-driving process of red, green, refactor to implement the behaviour.
 
 ```
+
+   Follow the test-driving process of red, green, refactor to implement the behaviour.
+
 
 ```
