@@ -1,4 +1,4 @@
-# Diary Program Muli Class Design Recipe
+# Diary Program Multi Class Design Recipe
 
 1. Describe the Problem
 
