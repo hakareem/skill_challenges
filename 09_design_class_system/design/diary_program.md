@@ -42,6 +42,8 @@ class Task
  end
 end
 
+---
+
 class Contact
  def initialize(name,number)
  end
@@ -50,6 +52,8 @@ class Contact
  end
 end
 
+---
+
 class DiaryEntry
  def initialize(entry_name,entry)
  end
@@ -57,6 +61,8 @@ class DiaryEntry
  def entry_length # returns length of entry
  end
 end
+
+---
 
 class Diary
 
@@ -102,19 +108,28 @@ end
 # EXAMPLE
 
  # DiaryEntry Class - Unit Testing
-  entry = DiaryEntry.new("A", "1 2 3 4")
+  entry = DiaryEntry.new("A", "one two")
   entry.entry_name # returns "A"
-  entry.entry # returns "1 2 3 4"
-  entry.entry_length # 4
+  entry.entry # returns "one two"
+  entry.entry_length # 2
+
+   # # Given empty entries
+  entry = DiaryEntry.new("", "1 2 3 4") # fails
+  entry = DiaryEntry.new("A", "") # fails
+  entry = DiaryEntry.new("", "") # fails
+
+---
 
  # Contact Class - Unit Testing
   contact = Contact.new("H", "07126742783")
   contact.name # "H"
   contact.number # "07126742783"
 
-  ## Fail Cases:
-  contact_test = Contact.new("H","07363616") # number has to have a length of 11
-  contact_test = Contact.new("H","7127363616") # number has to start with 0
+  ## Fail Cases: Given a number which is not 11 digits long or a number that doesn't start with 0
+  contact_test = Contact.new("H","071234567") # number has to have a length of 11
+  contact_test = Contact.new("H","77123456789") # number has to start with 0
+
+---
 
  # Task Class - Unit Testing
   task = Task.new("run")
@@ -125,22 +140,27 @@ end
   task_test = Task.new("jump")
   expect{task_test.complete?} # fails becuase task isn't complete
 
+---
+
   # Multi Class - Integration Testing
    diary = Diary.new
    contact = Contact.new("A", "07123456789")
    diary.add_contact(contact)
    expect(diary.all_contacts) # returns  "A - 07123456789"
 
+   # # returns all available tasks
    diary = Diary.new
    task = Task.new("Run First")
    diary.add_task(task)
    expect(diary.all_tasks) # "Run First"
 
+   # # returns all available entries
    diary = Diary.new
    entry = DiaryEntry.new("A", "1 2 3 4 5")
    diary.add_entry(entry)
    expect(diary.all_entries)# returns "A - 1 2 3 4 5"
 
+   # # returns longest entry that can be read
    diary_test = Diary.new
    entry_test1 = DiaryEntry.new("A", "1 2 3 4 5")
    entry_test2 = DiaryEntry.new("B", "1 2 3 4 5 6")
@@ -150,6 +170,7 @@ end
    diary.add_entry(entry_test3)
    expect(diary_test.longest_entry_read(2,3)) # B
 
+   # # returns completed tasks
    diary = Diary.new
    task1 = Task.new("Go")
    task2 = Task.new("Walk")
@@ -160,6 +181,7 @@ end
    task2.mark_complete
    expect(diary.complete_tasks) # "Walk"
 
+   # # returns incompleted tasks
    diary = Diary.new
    task1 = Task.new("Run")
    task2 = Task.new("Joy")
@@ -169,6 +191,7 @@ end
    diary.add_task(task3)
    task2.mark_complete
    expect(diary.incomplete_tasks) # "Run, Stop"
+
 ```
 
 4. Implement the Behaviour

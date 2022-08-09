@@ -23,9 +23,21 @@ end
 ```ruby
 # EXAMPLE
 
-grammer_check("") or (1) => # raises an error
+# given an empty string
+grammer_check("")  => # raises an error
+
+# given a float / integer
+grammer_check(1)  => # raises an error
+grammer_check(1.3)  => # raises an error
+
+# given a string with correct format
 grammer_check("Hi, how are you?") => # returns correct
 
+# given a string starting with a lower case
+grammer_check("hi, how are you?") => # returns incorrect
+
+# given a string which doesn't end with a puncation mark
+grammer_check("Hi, how are you") => # returns incorrect
 
 ```
 

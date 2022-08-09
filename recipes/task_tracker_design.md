@@ -26,10 +26,19 @@ end
 
 # EXAMPLE
 
+# string without "#TODO returns false
+task_tracker("todo") => #returns false
+task_tracker("go swimming") => #returns false
+
+# string with "#TODO" returns true
 task_tracker("#todo") => #returns true
 task_tracker("#TODO running") => #returns true
-task_tracker("go swimming") => #returns false
+task_tracker("#TOdo, walk") => #returns true
+
+# empty string fails
 task_tracker("") => #returns error
+
+# given an integer or a float fails
 task_tracker(1) or (1.0) => #returns error
 
 

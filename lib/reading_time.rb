@@ -1,5 +1,6 @@
 
 def reading_time(text)
+ fail "Please enter some text" if text.empty?
  words_per_min = 200
  words_in_text = text.split(" ").size
  minute = (words_in_text / words_per_min).floor
@@ -11,4 +12,4 @@ def reading_time(text)
  else 
   return "About #{minute} minutes"
  end
-end
+end 

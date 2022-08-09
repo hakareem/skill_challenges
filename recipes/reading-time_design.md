@@ -25,9 +25,17 @@ end
 ```ruby
 # EXAMPLE
 
-reading_time("less than 1 minute") => # returns less than 1 minute
-reading_time("1 minute") => #returns about 1 minute
-reading_time("over 1 minute") => #returns the calculation
+# given an empty text
+reading_time("") => # fails
+
+# given text that takes less than 1 min to read
+reading_time("text") => # returns less than 1 minute
+
+# given text that takes 1 min to read
+reading_time("text") => # returns about 1 minute
+
+# given text that takes longer than 1 min to read
+reading_time("over 1 minute") => # returns the calculation
 
 ```
 

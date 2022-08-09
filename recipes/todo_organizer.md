@@ -45,10 +45,37 @@ end
 # EXAMPLE
 
 todo_tasks = TodoOrganizer.new
-todo_taks.list = []
 
+# listing without adding a todo
+todo_taks.list # []
+
+# adding todos
 todo_tasks.add("Go for a run")
-todo_tasks.list = "Go for a run"
+todo_tasks.list # "Go for a run"
+
+# adding an empty string as a todo
+todo_tasks.add("") # fails
+
+# adding multiple todos
+todo_tasks.add("football")
+todo_tasks.add("basketball")
+todo_tasks.list # "football", "basketball"
+
+# completing todos
+todo_tasks.add("football")
+todo_tasks.add("basketball")
+todo_tasks.complete("football")
+todo_tasks.complete("basketball")
+todo_tasks.list # returns empty list
+
+# completing half of todos
+todo_tasks.add("football")
+todo_tasks.add("basketball")
+todo_tasks.complete("football")
+todo_tasks.list # returns "basketball"
+
+# completing nonexistent todos
+todo_tasks.complete("run") # fails
 
 ```
 

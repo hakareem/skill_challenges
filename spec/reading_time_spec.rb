@@ -1,6 +1,12 @@
 require "reading_time"
 
 RSpec.describe "reading_time method" do
+  context "given an empty text" do
+  it "fails" do
+    expect{reading_time("")}.to raise_error "Please enter some text"
+  end
+  end
+
   context "given text is less than 1 minute" do
   it "returns less than 1 minute" do
     result = reading_time("I'm reading super fast")

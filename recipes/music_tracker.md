@@ -15,7 +15,6 @@
 class MusicTracker
 
 def initialize
- @tracks = []
 end
 
 def add(track) #track is a string
@@ -37,12 +36,21 @@ end
 # EXAMPLE
 
 track = MusicTracker.new
-track.list # => [] EMPTY ARRAY
 
+# adds a track to the list
 track.add("") # => fails if given input is empty
 
+# list returnd all tracks
+track.list # => EMPTY ARRAY
+
+# adding a single track
+track.add("a")
+trak.list # "a"
+
+# adding multiple tracks then listing
 track.add("Going Up")
-track.list # => ["Going up"]
+track.add("Going down")
+track.list # => "Going up", "Going down"
 
 ```
 

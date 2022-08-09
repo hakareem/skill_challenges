@@ -2,6 +2,14 @@ require "diary_entry"
 
 
 RSpec.describe DiaryEntry do
+  context "initialize with empty entries" do
+    it "fails" do
+    expect{DiaryEntry.new("", "test test test test")}.to raise_error "Please fill out the entries"
+    expect{DiaryEntry.new("A", "")}.to raise_error "Please fill out the entries"
+    expect{DiaryEntry.new("", "")}.to raise_error "Please fill out the entries"
+      end
+    end
+    
   context "User has access to the entries" do
     it "returns the entry" do
     entry = DiaryEntry.new("A", "test test test test")
